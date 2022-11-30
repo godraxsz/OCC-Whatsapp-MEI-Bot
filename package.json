@@ -1,0 +1,28 @@
+{
+  "author": {
+    "name": "Matheus Fontes Parisi",
+    "email": "matheusfontesparisi@hotmail.com",
+    "url": "https://www.linkedin.com/in/matheusparisi/"
+  },
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "@wppconnect-team/wppconnect": "^1.14.4",
+    "better-sqlite3": "^7.5.3",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
+    "express-validator": "^6.9.2",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "moment-timezone": "^0.5.34",
+    "mysql2": "^2.3.3",
+    "qrcode": "^1.5.1",
+    "quick.db": "^9.0.5",
+    "receitaws": "^0.1.4",
+    "socket.io": "2.3.0",
+    "timeout-refresh": "^2.0.1",
+    "timer-stopwatch": "^0.2.0",
+    "mime-types": "^2.1.32"
+  }
+}

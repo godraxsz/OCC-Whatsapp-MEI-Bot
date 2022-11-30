@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR" >
+<head>
+  <meta charset="UTF-8">
+  <title>BOT PANEL - MEI</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1>BOT PANEL - MEI</h1>
+<div id="app">
+<div class="div1">
+   <!--p>I'm some random text</p -->
+   <h3>CONSOLE LOG</h3>
+   <ul class="logs"></ul>
+</div>
+<div class="div2">
+   <h3>SCAN</h3>
+   <img src="" alt="QR Code" id="qrcode">
+</div>
+<div class="div3">
+   <h3>CHAMADOS</h3>
+</div>
+
+</div>
+
+<div id="app2">
+
+</div>
+<!-- partial -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function () {
+			var socket = io();
+
+			socket.on('message', function (msg) {
+				$('.logs').append($('<li>').text(msg));
+			});
+
+			socket.on('qr', function (src) {
+				$('#qrcode').attr('src', src);
+				$('#qrcode').show();
+			});
+
+			socket.on('ready', function (data) {
+				$('#qrcode').hide();
+			});
+
+			socket.on('authenticated', function (data) {
+				$('#qrcode').hide();
+			});
+		});
+	</script>
+  
+</body>
+
+<div class="footer">
+  <h4>Made with ❤️ by Matheus Parisi</h4>
+</div>
+
+</html>
